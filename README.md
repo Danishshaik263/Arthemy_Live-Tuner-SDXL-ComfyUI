@@ -1,4 +1,4 @@
-# Arthemy Live Tuner SDXL ComfyUI
+# Arthemy Live Tuner SDXL • ComfyUI nodes
 ComfyUI nodes useful to Tweak SDXL, Illustrious, and NAI models by adjusting specific 'slices'. These nodes break the U-Net and CLIP into areas of application (like Style, Lighting, Word Logic...) and use individual weights to boost or lower the intensity of any of those sections without training.
 
 ![Arthemy Tuner Interface](assets/Presentation-ArthemyLiveTunerSDXL.webp)
