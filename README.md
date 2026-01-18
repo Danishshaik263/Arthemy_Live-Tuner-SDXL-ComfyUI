@@ -15,6 +15,8 @@ I utilized the block-splitting logic found in tools like "SDXL Block Merge" and 
 
 This process is fast and can be seamlessly integrated into any workflow, effectively transforming static checkpoints into a set of "Sliders" for precise control over the output.
 
+![Arthemy Tuner Interface](assets/Workflow-ArthemyLiveTunerSDXL.webp)
+
 ---
 
 ## Model Tuner: Application Areas
