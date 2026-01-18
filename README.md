@@ -1,75 +1,67 @@
 # Arthemy_Live-Tuner-SDXL-ComfyUI
 ComfyUI nodes useful to Tweak SDXL, Illustrious, and NAI models by adjusting specific 'slices'. These nodes break the U-Net and CLIP into areas of application (like Style, Lighting, Word Logic...) and use sliders to boost or lower the intensity of any of those sections without training.
 
-🎚️ Arthemy Live Tuner: The SDXL Equalizer
+---
+
+# ✨ Arthemy Live Tuner - SDXL
+
 Hi everyone!
 
-After years of experimenting with SDXL (and all its variants) and model merging, I developed these nodes to offer granular control over individual models.
+After years of experimenting with SDXL (including all its variants like Illustrious and NAI) and diving deep into model merging, I developed these nodes to offer granular control over a single model.
 
-In short, I took the same block-splitting system used in "SDXL Block Merging" tools and reorganized it into logical groups based on the parts of the generation they influence most visibly. Instead of merging two models, these nodes work on a single model, allowing you to amplify or reduce the intensity of specific "slices" in real-time.
+In short, I took the complex logic of "SDXL Block Merging" and reorganized it into functional groups based on their actual visual impact on image generation. Instead of merging two models, these nodes act on a **single model**, allowing you to amplify or reduce the intensity of specific "slices" or areas of application.
 
-It’s a very fast process that fits into any workflow, turning static models into "Slider-based Models" to give you total control over how a checkpoint performs.
+The process is incredibly fast and can be added to any workflow, effectively transforming static checkpoints into a set of **"Model Sliders"** for total creative control.
 
-🚀 What does it do?
-Imagine your model is an audio track. Usually, you can only turn the volume up or down (the strength of a LoRA or Checkpoint). Arthemy Live Tuner is the equalizer. Want more detail but less "lighting" influence? Just move the sliders.
+---
 
-🧠 Arthemy Model Tuner (U-Net)
-This node breaks down the U-Net into semantic areas:
+## Key Features
 
-Layout & Geometry: Controls the "bones" and spatial structure.
+* **Visual Equalizer:** Adjust the "volume" of specific model parts like Layout, Lighting, or Texture without changing the entire image.
+* **No Retraining Required:** Get LoRA-like control directly on your base checkpoint.
+* **Optimized for SDXL:** Deep support for the 32-layer CLIP (ViT-bigG) and U-Net architecture.
+* **Compatible with Everything:** Works with SDXL, Illustrious, NAI, and most SDXL-based merges.
 
-Subject Identity: Defines the semantic heart of objects and characters.
+---
 
-Art Style & Medium: The main driver for the artistic look.
+## The Nodes
 
-Atmosphere & Lighting: Adjusts volumetrics and light behavior.
+### 1. ✨ Arthemy Model Live Tuner
 
-Texture & Sharpness: Fine-tunes high-frequency details like skin pores or fabric.
+This node targets the **U-Net** (the visual brain). I've grouped the technical blocks into intuitive sliders:
 
-✍️ Arthemy CLIP Tuner
-Controls how the AI interprets your words:
+* **Structure & Composition:** Control the geometry, perspective, and global masses.
+* **Subject & Core:** Fine-tune object semantics and the central heart of the image.
+* **Style & Rendering:** Boost the art style, material substance, or lighting/atmosphere.
+* **Fine Details:** Push high-frequency details like skin textures and final sharpness.
 
-Syntax Rigidity: How strictly the AI follows your grammar.
+### 2. ✨ Arthemy CLIP Live Tuner
 
-Semantic Focus: How much weight is given to the objects/actions described.
+This node targets the **CLIP Text Encoder**, dividing it into 3 logical blocks to control how the AI "reads" your prompt:
 
-Style Abstraction: How much the "artistic vibe" overrides literal prompt adherence.
+* **Syntax Rigidity:** How strictly the AI follows your grammar and word order.
+* **Semantic Focus:** How much weight is given to the objects and actions you describe.
+* **Style Abstraction:** Control the level of artistic flair vs. literal interpretation.
 
-⚖️ Real Value vs. Soft Value
-I’ve included two modes to handle how the weights are applied:
+---
 
-Real Value: A direct, linear multiplier. If you set it to 1.5, the weight of those blocks increases by exactly 50%. Best for surgical precision.
+## 🎚️ Tuning Modes: Soft vs. Real
 
-Soft Value: This uses a custom quadratic curve. It’s designed to be "safer" and smoother. It prevents the model from "breaking" or over-saturating too quickly when you push the sliders to extremes, making transitions feel more natural.
+You can choose between two mathematical curves for the sliders:
 
-🖼️ Visual Guide (Where to add images)
-To make this README truly "pop," I suggest adding images in these specific spots:
+* **Real Value:** A direct, linear multiplier. If you set 1.2, the area is 20% stronger. Best for surgical precision.
+* **Soft Value:** A custom quadratic curve designed for smoother transitions.
+* Below 1.0, it uses  to prevent the model from "breaking" or collapsing too quickly.
+* Above 1.0, it applies a gentler 0.133 scaling factor.
+* **Use Soft Mode** for a more "organic" feel when you want to make subtle improvements.
 
-Header Image: Right under the main title.
 
-What to show: A screenshot of both nodes (Model and CLIP Tuner) connected to a Load Checkpoint node in ComfyUI.
+---
 
-The "Equalizer" Effect: Under the "What does it do?" section.
+## Installation
 
-What to show: A Comparison Grid (XY Plot). Take the same seed and prompt, then show 3 versions:
+1. Navigate to your `ComfyUI/custom_nodes/` folder.
+2. Run: `git clone https://github.com/aledelpho/Arthemy_Live-Tuner-SDXL-ComfyUI.git`
+3. Restart ComfyUI.
 
-Subject Identity at 0.5.
-
-Subject Identity at 1.0 (Default).
-
-Subject Identity at 1.5.
-
-Texture Control: Under the "Model Tuner" description.
-
-What to show: A close-up (crop) of a face or fabric. Show the difference between OUT_Texture_Details at 0.8 vs 1.4. This highlights the "sharpness" control without using external filters.
-
-CLIP Logic: Under the "CLIP Tuner" section.
-
-What to show: An image with a complex prompt. Show how Style Abstraction at 1.5 makes the image more "painterly/vibrant" even if the prompt is simple.
-
-🛠️ Installation
-Navigate to your ComfyUI/custom_nodes/ folder.
-
-Run: git clone https://github.com/aledelpho/Arthemy_Live-Tuner-SDXL-ComfyUI.git
-
-Restart ComfyUI.
+---
