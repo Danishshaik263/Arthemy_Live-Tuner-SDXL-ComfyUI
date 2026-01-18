@@ -1,5 +1,5 @@
 # Arthemy_Live-Tuner-SDXL-ComfyUI
-ComfyUI nodes useful to Tweak SDXL, Illustrious, and NAI models by adjusting specific 'slices'. These nodes break the U-Net and CLIP into areas of application (like Style, Lighting, Word Logic...) and use sliders to boost or lower the intensity of any of those sections without training.
+ComfyUI nodes useful to Tweak SDXL, Illustrious, and NAI models by adjusting specific 'slices'. These nodes break the U-Net and CLIP into areas of application (like Style, Lighting, Word Logic...) and use individual weights to boost or lower the intensity of any of those sections without training.
 
 ![Arthemy Tuner Interface](assets/Presentation-ArthemyLiveTunerSDXL.webp)
 
@@ -9,7 +9,7 @@ ComfyUI nodes useful to Tweak SDXL, Illustrious, and NAI models by adjusting spe
 
 Hi everyone!
 
-After years of experimenting with SDXL (including variants like Illustrious and NAI) and deep diving into model merging, I developed these nodes to offer granular control over a single model.
+After years experimenting with SDXL (including variants like Illustrious and NAI) and deep diving into model merging, I developed these nodes for ComfyUI to offer granular control over a single model.
 
 I utilized the block-splitting logic found in tools like "SDXL Block Merge" and reorganized those technical segments into functional groups based on their visible impact on generation. Instead of merging two models, these nodes act on a single model, allowing you to amplify or reduce the intensity of those areas.
 
