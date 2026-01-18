@@ -1,0 +1,6 @@
+{
+  "name": "Arthemy Live Tuner - SDXL",
+  "description": "Advanced live tuning nodes for SDXL U-Net and CLIP blocks.",
+  "author": "aledelpho",
+  "version": "1.0.0"
+}
