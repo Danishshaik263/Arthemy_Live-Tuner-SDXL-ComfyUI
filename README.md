@@ -43,6 +43,23 @@ These areas are still experimental guidelines that will be refined with time.
 * **OUT_Texture_Details**: Targets high-frequency details such as skin pores, fabric weave, and fine textures.
 * **OUT_Final_Sharpness**: Handles final pixel refinement and sharpness.
 
+### Examples
+
+For this example, I've used my model [Arthemy Painter Illustrious v4.0](https://civitai.com/models/1598875?modelVersionId=2598065) and I've written this prompt:
+
+```
+oil painting (medium), (chiaroscuro), perspective, fantasy, solo, ((sketch)), fog, dynamic pose.
+((white background, simple background)), ((upper body, side view)), calm, serene, silver eyes, running, braided hair, black hair, half-elf, olive skin, sharp jaw, athletic, 1boy, cloth, simple tunic, monk, orange belt, tan pants, holding staff, white theme.
+```
+
+![Arthemy Tuner Interface](assets/Comparison-ArthemyLiveModelTuner.webp)
+
+Here, by increasing the "OUT_Shadows-Depth" to "1.20" (which is a crazy amount), the output looks deeper and darker without affecting the composition very much (Of course, by lowering this value the result would end up lighter and less defined)
+
+![Arthemy Tuner Interface](assets/Comparison-ArthemyLiveModelTuner2.webp)
+
+On the other hand, by increasing the value of "OUT_Art_Style_Medium" to "1.05" (this is a very sensitive part of the model) the output has a more powerful art style, which also granted a closer representation of what I wrote in the prompt (Here "Fog" and "Running" seems to have emerged too).
+
 ---
 
 ## CLIP Tuner: Semantic Areas
@@ -55,17 +72,9 @@ This node divides the 32 layers of the SDXL CLIP model (ViT-bigG) into three log
 
 ### Examples
 
-For this example, I've used my model [Arthemy Painter Illustrious v4.0](https://civitai.com/models/1598875?modelVersionId=2598065) and I've written this prompt:
-
-```
-oil painting (medium), (chiaroscuro), perspective, fantasy, solo, ((sketch)), fog, dynamic pose.
-((white background, simple background)), ((upper body, side view)), calm, serene, silver eyes, running, braided hair, black hair, half-elf, olive skin, sharp jaw, athletic, 1boy, cloth, simple tunic, monk, orange belt, tan pants, holding staff, white theme.
-```
-Unfortunately, the image was very "Static" and it didn't seem to show the "Running" action I was looking for - the following results are made with the same parameters, except for the weight of a single area of the Clip Tuner.
-
 ![Arthemy Tuner Interface](assets/Comparison-ArthemyLiveClipTuner2.webp)
 
-Here, you can see that I've solved the issue lowering the value of the "Semantic Focus" which was too "Stiff" in my model, granting it the ability to be more flexible with the poses - with the downside that I've lose a little bit of its style.
+Here, I've solved the issue lowering the value of the "Semantic Focus" which was too "Stiff" in my model, granting it the ability to be more flexible with the poses - with the downside that I've lose a little bit of its style.
 
 ![Arthemy Tuner Interface](assets/Comparison-ArthemyLiveClipTuner.webp)
 
